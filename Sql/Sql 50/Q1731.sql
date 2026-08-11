@@ -1,5 +1,5 @@
 /*
-============================================================
+=============================================================
 LeetCode 1731 - The Number of Employees Which Report to Each Employee
 
 Difficulty : Easy 🟢
@@ -24,7 +24,7 @@ Approach:
 Time Complexity : O(n)
 Space Complexity: O(1) (excluding output)
 
-============================================================
+=============================================================
 */
 
 SELECT
