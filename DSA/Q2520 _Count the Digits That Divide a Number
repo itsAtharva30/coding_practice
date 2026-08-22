@@ -1,0 +1,59 @@
+/*
+LeetCode 2520 - Count the Digits That Divide a Number
+
+Difficulty : Easy 🟢
+Topic      : Math, Digit Manipulation
+
+Description:
+Given an integer num, return the number of digits in num
+that divide num evenly.
+
+Approach:
+
+- Store the original number in num because we need it for
+  the divisibility check.
+- Use a separate variable n to extract the digits.
+- Extract each digit using:
+    digit = n % 10
+- Check whether the current digit divides the original number:
+    num % digit == 0
+- If it divides evenly, increment the count.
+- Remove the last digit using:
+    n = n / 10
+- Continue until all digits have been processed.
+
+Important:
+- The original number must be preserved because n is modified
+  while extracting its digits.
+- Every digit of num is guaranteed to be non-zero according
+  to the problem constraints, so division by zero is not an issue.
+
+Time Complexity : O(log n)
+- We process each digit exactly once.
+- A number n has O(log n) digits.
+
+Space Complexity : O(1)
+- Uses only a constant amount of extra space.
+
+============================================================
+*/
+
+class Solution {
+public:
+    int countDigits(int num) {
+        int n = num;
+        int count = 0;
+
+        while (n > 0) {
+            int digit = n % 10;
+
+            if (num % digit == 0) {
+                count++;
+            }
+
+            n /= 10;
+        }
+
+        return count;
+    }
+};
